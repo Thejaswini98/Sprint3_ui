@@ -3,6 +3,6 @@ import errorReducer from './errorReducer';
 import patientsReducer from './patientsReducer'
 
 export default combineReducers({
-   errorReducer:errorReducer,
+   error:errorReducer,
    patients:patientsReducer
 });

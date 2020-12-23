@@ -87,7 +87,7 @@ class AddPatient extends Component {
                                 <div className="form-group">
                                     <input
                                         type="text"
-                                        className={classnames("form-control form-control-lg", { "is-invalid": errors.patientIdentifier })}
+                                        className={classnames("form-control form-control-lg", { "is-invalid": errors.patientIdentifier },{ "is-invalid": errors.responseMessage })}
                                         placeholder="Unique Patient ID"
                                         name="patientIdentifier"
                                         onChange={this.onChange}
@@ -96,6 +96,11 @@ class AddPatient extends Component {
                                     {errors.patientIdentifier && (
                                         <div className="invalid-feedback">
                                             {errors.patientIdentifier}
+                                        </div>
+                                    )}
+                                    {errors.responseMessage && (
+                                        <div className="invalid-feedback">
+                                            {errors.responseMessage}
                                         </div>
                                     )}
                                 </div>
@@ -127,7 +132,7 @@ class AddPatient extends Component {
                                         onChange={this.onChange}
                                         value={this.state.phoneNumber}
                                     />
-                                    {errors.patientIdentifier && (
+                                    {errors.phoneNumber && (
                                         <div className="invalid-feedback">
                                             {errors.phoneNumber}
                                         </div>
