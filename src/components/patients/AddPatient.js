@@ -2,7 +2,6 @@ import React, { Component, UseState } from 'react'
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
-import Modal from 'react-modal'
 import { createPatient } from '../../actions/PatientAction';
 class AddPatient extends Component {
 
@@ -45,17 +44,11 @@ class AddPatient extends Component {
             patientAddress: this.state.patientAddress
         }
         this.props.createPatient(newPatient, this.props.history);
-        this.showModal();
+        
 
     }
 
-    showModal = () => {
-        this.setState({ modalIsOpen: true });
-    };
-
-    hideModal = () => {
-        this.setState({ modalIsOpen: false });
-    };
+    
 
     render() {
         const {errors} = this.state;

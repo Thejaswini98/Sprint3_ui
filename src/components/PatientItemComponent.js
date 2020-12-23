@@ -11,10 +11,10 @@ class PatientItemComponent extends React.Component {
             <div className="container">
                 <div className="card card-body bg-light mb-3">
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-3">
                             <span className="mx-auto"><b>Add Patient Details</b></span>
                         </div>
-                        <div className="col-md-8 d-none d-lg-block">
+                        <div className="col-md-7">
                             <p>Use this service to add the details about the patient and saved it permanently inside the repository</p>
                         </div>
                         <div className="col-md-2">
@@ -26,10 +26,10 @@ class PatientItemComponent extends React.Component {
 
                 <div className="card card-body bg-light mb-3">
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-3">
                             <span className="mx-auto"><b>Get Patient Details</b></span>
                         </div>
-                        <div className="col-md-8 d-none d-lg-block">
+                        <div className="col-md-7">
                             <p>Use this service to get the details about the patients in table format</p>
                         </div>
                         <div className="col-md-2">
@@ -41,10 +41,10 @@ class PatientItemComponent extends React.Component {
 
                 <div className="card card-body bg-light mb-3">
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-3">
                             <span className="mx-auto"><b>Delete Patient Details</b></span>
                         </div>
-                        <div className="col-md-8 d-none d-lg-block">
+                        <div className="col-md-7">
                             <p>Use this service to delete the details about the patients in table format</p>
                         </div>
                         <div className="col-md-2">

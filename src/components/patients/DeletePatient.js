@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { deletePatient } from '../../actions/PatientAction';
-import Modal from 'react-modal'
 import classnames from "classnames";
 class DeletePatient extends Component {
 
@@ -14,10 +13,6 @@ class DeletePatient extends Component {
             errors : {},
             modalIsOpen: false
         }
-    }
-
-    componentDidMount(){
-        this.props.deletePatient();
     }
 
     componentWillReceiveProps(nextProps)
@@ -42,16 +37,11 @@ class DeletePatient extends Component {
         }
         console.log(this.state.patientIdentifier);
         this.props.deletePatient(this.state.patientIdentifier,this.props.history);
-        this.showModal();
+        
 
     }
 
-    showModal = ()=> {
-        this.setState({ modalIsOpen: true});
-    };
-    hideModal = ()=> {
-        this.setState({ modalIsOpen: false});
-    };
+    
     render() {
         const {errors} = this.state;
         return (
@@ -66,7 +56,7 @@ class DeletePatient extends Component {
                             <div className="form-group">
                                 <input 
                                     type="text" 
-                                    className={classnames("form-control form-control-lg",{"is-invalid":errors.patientIdentifier})}
+                                    className={classnames("form-control form-control-lg",{"is-invalid":errors.patientIdentifier},{ "is-invalid": errors.responseMessage })}
                                     placeholder="Unique Patient ID" 
                                     name="patientIdentifier" 
                                     onChange={this.onChange}
@@ -76,6 +66,11 @@ class DeletePatient extends Component {
                                     {errors.patientIdentifier && (
                                         <div className="invalid-feedback">
                                             {errors.patientIdentifier}
+                                            </div>
+                                    )}
+                                    {errors.responseMessage && (
+                                        <div className="invalid-feedback">
+                                            {errors.responseMessage}
                                             </div>
                                     )}
                             </div>
@@ -96,8 +91,7 @@ DeletePatient.propTypes = {
     errors:PropTypes.object.isRequired
 }
 
-const mapStateToProps = state => ({
-    errors: state.errors
-});
-
+const mapStateToProps = state => {
+    return { errors: state.error }
+};
 export default connect(mapStateToProps,{deletePatient})(DeletePatient);

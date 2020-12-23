@@ -34,15 +34,16 @@ export const getPatient=(patientidentifier,history)=>async dispatch=>{
 
 export const deletePatient=(patientIdentifier,history)=>async dispatch=>{
     try{
-        if(window.confirm("Are you sure ? This will delete the patient and the data related to it")) {
+        
         const res = await axios.delete(`http://localhost:8081/api/patients/${patientIdentifier}`);
+        window.confirm("Are you sure ? This will delete the patient and the data related to it")
         alert("Patient successfully deleted !!");
         history.push("/getPatient");
         dispatch({
             type:DELETE_PATIENT,
             payload:patientIdentifier
         })
-     }}
+     }
      catch (error) {
         
         console.log(error.response);

@@ -6,7 +6,7 @@ class Footer extends Component {
         return (
             <div>
                 <br/>
-                <footer className = "footer col-xs-3">
+                <footer className = "footer">
                     <p>Life-line Health Assist &copy; copyrights 2020</p>
                 </footer>
             </div>
