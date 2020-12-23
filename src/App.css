@@ -1,0 +1,37 @@
+.navbar {
+  background-color: #EEE8AA;
+}
+.color-change {
+  color: orange;
+}
+.navbar-brand {
+  padding: 12px 0px;
+  font-size: 25px;
+ font-weight: bold;
+ margin-left: 2px;
+}
+
+.links {
+  width: 50%;
+  margin: 0 auto;
+}
+.links .mr-auto .nav-link {
+  padding-right: 80px;
+  font-size: 20px;
+  color: #000;
+}
+.logins .nav-link {
+  display: inline;
+  text-decoration: none;
+  color: #000;
+}
+
+.footer {
+  background-color: grey;
+}
+.footer p {
+  padding: 15px 0px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
